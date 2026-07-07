@@ -1,0 +1,19 @@
+{
+  "servers": {
+    "totvs-rm-database-mcp-server": {
+      "type": "http",
+      "url": "http://bh-eng-auttop01.bh01.local:3000/mcp",
+      "headers": {
+        "Authorization": "Bearer ${input:MCP_TOTVS_RM_DATABASE_TOKEN}"
+      }
+    }
+  },
+  "inputs": [
+    {
+      "id": "MCP_TOTVS_RM_DATABASE_TOKEN",
+      "type": "promptString",
+      "description": "Token de autenticação MCP Server - TOTVS RM Database",
+      "password": true
+    }
+  ]
+}
