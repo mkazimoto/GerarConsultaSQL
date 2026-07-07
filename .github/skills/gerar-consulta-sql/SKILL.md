@@ -137,21 +137,7 @@ ORDER BY
 
 ---
 
-### 4. Validar com Execute SQL
-
-Após gerar a consulta, teste-a usando a ferramenta MCP:
-
-```
-execute_sql: SELECT TOP 10 <consulta gerada>
-```
-
-- Verifique se retornou linhas esperadas
-- Confirme que colunas e tipos batem com o esperado
-- Se retornar erro, ajuste o SQL e repita
-
----
-
-### 5. Entregar o Resultado
+### 4. Entregar o Resultado
 
 Entregue o SQL formatado em um bloco de código `sql`, com:
 1. Cabeçalho de comentários (objetivo, módulo, tabelas)
