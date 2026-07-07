@@ -26,16 +26,43 @@ Se o pedido for ambíguo, pergunte o módulo ou a entidade de negócio antes de 
 
 ### 2. Explorar o Schema via MCP
 
-Use a ferramenta MCP `totvs-rm-database-mcp-server` para descobrir tabelas e colunas. Exemplos de uso:
+Use as ferramentas MCP do servidor `totvs-rm-data` para descobrir tabelas, colunas e regras de negócio. Exemplos de cada ferramenta:
 
-**Inspecionar colunas de uma tabela específica**:
+---
+
+#### `totvs_search_tables` — Buscar tabelas por nome ou palavra-chave
+Use para localizar tabelas relacionadas a uma entidade de negócio:
 ```
-search_objects: object_type=column, schema=dbo, table=FLAN
+totvs_search_tables: query=lancamento financeiro
+totvs_search_tables: query=funcionario
+totvs_search_tables: query=FLAN
 ```
 
-**Buscar por nome de coluna**:
+---
+
+#### `totvs_get_table_schema` — Inspecionar colunas de uma tabela
+Use para ver todas as colunas, tipos de dados e se aceitam nulos:
 ```
-search_objects: object_type=column, pattern=CODCOLIGADA
+totvs_get_table_schema: table=FLAN
+totvs_get_table_schema: table=PFUNC
+totvs_get_table_schema: table=GCOLIGADA
+```
+
+---
+
+#### `totvs_get_table_rules` — Consultar regras de negócio de uma tabela
+Use para entender constraints, chaves primárias, foreign keys e regras de integridade:
+```
+totvs_get_table_rules: table=FLAN
+totvs_get_table_rules: table=PFUNC
+```
+
+---
+
+#### `totvs_validate_sql` — Validar a sintaxe e semântica de uma consulta
+Use antes de executar para verificar se a consulta está correta:
+```
+totvs_validate_sql: sql=SELECT FLAN.CODCOLIGADA, FLAN.IDLAN FROM FLAN (NOLOCK) WHERE FLAN.CODCOLIGADA = 1
 ```
 
 > Dica: A primeira letra do nome da tabela indica o módulo:
