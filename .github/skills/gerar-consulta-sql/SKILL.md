@@ -51,7 +51,7 @@ totvs_get_table_schema: table=GCOLIGADA
 ---
 
 #### `totvs_get_table_rules` — Consultar regras de negócio de uma tabela
-Use para entender constraints, chaves primárias, foreign keys e regras de integridade:
+Caso a coluna `Regras` do `totvs_search_tables` indique alguma regra, use `totvs_get_table_rules` para consultar possíveis valores das colunas da tabela:
 ```
 totvs_get_table_rules: table=FLAN
 totvs_get_table_rules: table=PFUNC
