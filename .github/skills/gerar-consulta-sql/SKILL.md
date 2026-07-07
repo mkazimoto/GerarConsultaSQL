@@ -1,7 +1,6 @@
 ---
 name: gerar-consulta-sql
-description: "Use when: gerando consultas SQL para o ERP RM da TOTVS; consultando tabelas do banco RM; escrevendo T-SQL para módulos Financeiro (F), Folha de Pagamento (P), Contábil (C), Gestão de Pessoas (V), Estoque/Compras/Faturamento (T), Patrimonial (I), Manutenção (N) do TOTVS RM; explorando schema do banco RM; criando relatórios SQL TOTVS; joins entre tabelas TOTVS RM; filtrar CODCOLIGADA; tabelas FLAN PFUNC CCUSTO TITMMOV TMOV VFUNC PFHSTCTR."
-argument-hint: "Descreva o dado ou relatório que você precisa obter do banco ERP RM"
+description: "Use when: gerando consultas SQL para o ERP RM da TOTVS; consultando tabelas do banco RM via MCP"
 ---
 
 # Gerar Consulta SQL – ERP RM TOTVS
@@ -28,11 +27,6 @@ Se o pedido for ambíguo, pergunte o módulo ou a entidade de negócio antes de 
 ### 2. Explorar o Schema via MCP
 
 Use a ferramenta MCP `totvs-rm-database-mcp-server` para descobrir tabelas e colunas. Exemplos de uso:
-
-**Listar tabelas de um módulo** (ex.: módulo Financeiro = prefixo `F`):
-```
-search_objects: object_type=table, pattern=F%
-```
 
 **Inspecionar colunas de uma tabela específica**:
 ```
@@ -143,7 +137,7 @@ Entregue o SQL formatado em um bloco de código `sql`, com:
 ## Exemplos de Prompts para Ativar esta Skill
 
 - `/gerar-consulta-sql Listar lançamentos financeiros em aberto e a receber da coligada 1`
-- `/gerar-consulta-sql Relatório de funcionários ativos com salário por seção`
-- `/gerar-consulta-sql Total de notas fiscais de entrada por fornecedor no mês`
-- `/gerar-consulta-sql Gere uma consulta SQL para buscar os movimentos de estoque do módulo de materiais`
-- `/gerar-consulta-sql Gere uma consulta SQL para agrupar os funcionários por faixa etária de 10 anos`
+- `/gerar-consulta-sql Listar de funcionários ativos agrupados por faixa etária`
+- `/gerar-consulta-sql Listar os top 10 os clientes inadimplentes de vendas de imóveis`
+- `/gerar-consulta-sql Listar os top 10 professores com mais faltas no módulo de ensino superior`
+- `/gerar-consulta-sql Listar os top 10 alunos com as maiores notas no módulo de ensino básico`
