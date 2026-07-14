@@ -259,5 +259,4 @@ ORDER BY
 | Não sei o nome da tabela | Use `totvs_search_tables` com termos de negócio |
 | JOIN retorna duplicatas | Verifique se incluiu `CODCOLIGADA` na condição do JOIN |
 | Coluna não encontrada | Consulte `totvs_get_table_schema` para confirmar o nome exato |
-| Query lenta | Use `totvs_get_db_index` para identificar colunas indexadas |
 | Relacionamento não claro | Leia a seção "Relacionamentos" no schema retornado pelo MCP |
